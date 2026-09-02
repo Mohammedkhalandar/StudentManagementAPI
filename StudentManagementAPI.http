@@ -1,0 +1,55 @@
+@StudentManagementAPI_HostAddress = http://localhost:5245
+
+### Get all students
+GET {{StudentManagementAPI_HostAddress}}/api/students
+Accept: application/json
+
+###
+
+### Create a student
+POST {{StudentManagementAPI_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Mohammed",
+  "email": "mohammed@example.com",
+  "age": 22,
+  "course": "C# ASP.NET Core"
+}
+
+###
+
+### Get student by ID
+GET {{StudentManagementAPI_HostAddress}}/api/students/1
+Accept: application/json
+
+###
+
+### Update student
+PUT {{StudentManagementAPI_HostAddress}}/api/students/1
+Content-Type: application/json
+
+{
+  "name": "Mohammed Khalandar",
+  "email": "mohammed@example.com",
+  "age": 23,
+  "course": "Advanced ASP.NET Core"
+}
+
+###
+
+### Delete student
+DELETE {{StudentManagementAPI_HostAddress}}/api/students/1
+
+###
+
+### Test invalid student validation
+POST {{StudentManagementAPI_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "invalid-email",
+  "age": -5,
+  "course": ""
+}
